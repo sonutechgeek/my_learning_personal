@@ -1,0 +1,21 @@
+let data = [1, 7, 4, 4, 5, 6, 7, 5, 8, 3, 5, 4, 5, 5];
+let map = {};
+let = accur=0;
+function first_accur(arr, k) {
+    for (let i = 0; i < arr.length; i++) {
+        if (!map[arr[i]]) {
+            map[arr[i]] = 1;
+        }
+        else {
+            map[arr[i]] = map[arr[i]] + 1;
+            if (arr[i]== k) {
+                accur = i+1;
+                break;
+            }
+        }
+    }
+    return map;
+}
+
+ first_accur(data, 5);
+console.log(accur);

@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Ecma script Tutorial</title>
+</head>
+
+<body>
+    <h1>find and findIndex</h1>
+    <script>
+        // let data=[10,20,7,50,1,100];
+
+
+        // let data = [
+        //     { id: 10, name: "a" },
+        //     { id: 8, name: "b" },
+        //     { id: 50, name: "c" },
+        //     { id: 1, name: "d" },
+        //     { id: 100, name: "e" },
+
+        // ]
+
+        //  let data = [
+        //     { id: 0, name: "a" },
+        //     { id: null, name: "b" },
+        //     { id: NaN, name: "c" },
+        //     { id: undefined, name: "d" },
+        //     { id: 100, name: "e" }, output
+
+        // ]
+
+        let data = [
+            { id: 0, name: "a" },
+            { id: null, name: "b" },
+            { id: NaN, name: "c" },
+            { id: undefined, name: "d" },
+            { id: 1, name: "e" },
+
+        ] //output undefined
+
+        let result = data.find(function (item) {
+            return item.id;
+        })
+        console.warn(result)
+    </script>
+
+If you modify the `data` array to include elements with falsy `id` values like `0`, `null`, and `undefined`, the behavior of the `find()` method will change slightly.
+
+The `find()` method returns the first element in the array that satisfies the provided testing function. In this case, the provided testing function `function (item) { return item.id; }` simply returns the `id` property of each object in the array.
+
+For falsy values such as `0`, `null`, and `undefined`, the testing function will return these values directly. Since these values are considered falsy, the `find()` method will interpret them as not meeting the condition and continue searching. The first truthy value encountered will be `{ id: 50, name: "c" }`.
+
+So, the value of `result` will be:
+
+```javascript
+{ id: 50, name: "c" }
+```
+
+This behavior is important to understand when using `find()` with falsy values in your data. If you're looking for a specific condition, you should adjust the callback function accordingly to handle falsy values appropriately.
+
+</body>
+
+</html>
+
+
+The `find()` method in JavaScript returns the first element in the array that satisfies the provided testing function. In your code, the provided testing function `function (item) { return item.id; }` simply returns the `id` property of each object in the array.
+
+Since all the `id` properties are truthy values (since they are numbers and none of them are 0 or falsy), the `find()` method will return the first element in the array, which is `{ id: 10, name: "a" }`.
+
+So, the value of `result` will be:
+
+```javascript
+{ id: 10, name: "a" }
+```
+
+It's worth noting that if you intend to find an element based on a specific condition, you should adjust the callback function accordingly. For example, if you wanted to find an item with a specific id, you would modify the callback function to check for that id:
+
+```javascript
+let result = data.find(function (item) {
+    return item.id === 50; // or any other id you're looking for
+});
+```

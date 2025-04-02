@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Ecma script Tutorial</title>
+</head>
+<body>
+    <h1>Classes</h1>
+    <script>
+        class Fruits{
+            name="orange"
+            constructor()
+            {
+                console.warn("constructor",this.name)
+            }
+             getFruits(item)
+            {
+                return item
+            }
+
+        }
+        let f1= new Fruits;
+        console.warn(f1.name)
+        //Q2. why we do not used the function keyword in class function and let var and const in instance variable 
+        // In JavaScript, the `class` keyword was introduced in ECMAScript 2015 (ES6) as syntactic sugar for defining constructor functions and their prototypes. When you declare methods within a class, you do not need to use the `function` keyword explicitly because methods within a class are automatically defined as functions.
+
+        // Here's an example of how you define a class with methods:
+
+        // ```javascript
+        // class MyClass {
+        //     constructor() {
+        //         // Constructor function
+        //     }
+
+        //     myMethod() {
+        //         // Method defined without using the `function` keyword
+        //     }
+        // }
+        // ```
+
+        // Within the class body, methods are automatically defined as function expressions. Using the `function` keyword inside a class to define methods would lead to a syntax error because it's not the correct syntax within a class.
+
+        // As for variables (`let`, `const`, `var`), they can still be used within a class to declare properties, but they are typically declared within the constructor method or directly within the class body. For example:
+
+        // ```javascript
+        // class MyClass {
+        //     constructor() {
+        //         this.property1 = 'value'; // Property declaration inside the constructor
+        //     }
+
+        //     myMethod() {
+        //         const localVar = 'local'; // Local variable declaration inside a method
+        //     }
+        // }
+        // ```
+
+        // Inside a class, you use `this` to refer to properties of the instance, and you typically define properties within the constructor function to initialize them when an instance of the class is created.
+
+        //Q1. Different between method and function in 
+        // In programming, the terms "method" and "function" are often used interchangeably, but there are distinctions between them, especially in the context of object-oriented programming (OOP):
+
+        // 1. **Function:**
+        // - A function is a block of reusable code that performs a specific task.
+        // - Functions in JavaScript are standalone blocks of code that can be called independently of any object or class.
+        // - They can be declared using the `function` keyword and assigned to variables, or defined anonymously.
+
+        // Example:
+        // ```javascript
+        // function greet(name) {
+        //     console.log(`Hello, ${name}!`);
+        // }
+        // ```
+
+        // 2. **Method:**
+        // - A method is a function that is associated with an object or class.
+        // - In the context of OOP, methods are functions that are defined as properties of objects or classes.
+        // - They are invoked on specific instances of objects or classes and typically operate on the data contained within those instances.
+        // - Methods are accessed using dot notation (`object.method()` or `instance.method()`).
+
+        // Example:
+        // ```javascript
+        // const person = {
+        //     name: 'John',
+        //     greet: function() {
+        //         console.log(`Hello, my name is ${this.name}.`);
+        //     }
+        // };
+
+        // person.greet(); // Outputs: Hello, my name is John.
+        // ```
+
+        // In summary, while both functions and methods are blocks of code that perform a specific task, the key difference lies in their association with objects or classes. Functions are standalone units of code, while methods are functions that are part of an object or class and operate on the data within those objects or classes.
+
+    </script>
+</body>
+
+</html>

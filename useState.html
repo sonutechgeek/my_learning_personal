@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="checkCount()">count</button>
+    <script>
+        function useState(initialState) {
+            let state = typeof initialState === 'function' ? initialState() : initialState;
+            function setState(newState) {
+                if (typeof newState === 'function') {
+                    state = newState(state);
+                } else {
+                    state = newState;
+                }
+                
+            }
+
+            return [state, setState];
+        }
+
+
+
+        const [count, setCount] = useState(0);
+        function checkCount(){
+            console.log(count);
+            setCount(prevCount => prevCount + 1);
+        }
+
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="countButton">Count</button>
+    <p id="countDisplay">0</p>
+    <script>
+        function useState(initialState) {
+            let state = typeof initialState === 'function' ? initialState() : initialState;
+            function setState(newState) {
+                if (typeof newState === 'function') {
+                    state = newState(state);
+                } else {
+                    state = newState;
+                }
+                // Re-render logic would go here in a real React environment
+                render();
+            }
+            return [() => state, setState];
+        }
+
+        const [getCount, setCount] = useState(0);
+
+        function checkCount() {
+            console.log(getCount()); // Use function to get the current state
+            setCount(prevCount => prevCount + 1);
+        }
+
+        function render() {
+            document.getElementById('countDisplay').textContent = getCount();
+        }
+
+        document.getElementById('countButton').addEventListener('click', checkCount);
+
+        // Initial render
+        render();
+    </script>
+</body>
+<script>
+    
+</script>
+</html>

@@ -1,0 +1,198 @@
+<html>
+
+<head>
+    <title>Ecma script Tutorial</title>
+</head>
+<body>
+    <h1>Arrow function</h1>
+    <h5>
+        <!-- In JavaScript, there are several ways to define functions, each with its own syntax and use cases. Here are the main types of functions you can write in JavaScript:
+        1. **Function Declarations:**
+        ```javascript
+        function functionName(parameters) {
+            // function body
+        }
+        ```
+        Example:
+        ```javascript
+        function add(a, b) {
+            return a + b;
+        }
+        ```
+
+        2. **Function Expressions:**
+        ```javascript
+        const functionName = function(parameters) {
+            // function body
+        };
+        ```
+        Example:
+        ```javascript
+        const add = function(a, b) {
+            return a + b;
+        };
+        ```
+        3. **Arrow Functions (ES6):**
+        ```javascript
+        const functionName = (parameters) => {
+            // function body
+        };
+        ```
+        Example:
+        ```javascript
+        const add = (a, b) => {
+            return a + b;
+        };
+        ```
+        4. **Method Functions (within objects):**
+        ```javascript
+        const objectName = {
+            methodName(parameters) {
+                // method body
+            }
+        };
+        ```
+        Example:
+        ```javascript
+        const calculator = {
+            add(a, b) {
+                return a + b;
+            },
+            subtract(a, b) {
+                return a - b;
+            }
+        };
+        ```
+
+        5. **Function Constructor:**
+        ```javascript
+        const functionName = new Function('parameter1', 'parameter2', '...','functionBody');
+        ```
+        Example:
+        ```javascript
+        const add = new Function('a', 'b', 'return a + b;');
+        ```
+
+        6. **Immediately Invoked Function Expression (IIFE):**
+        ```javascript
+        (function() {
+            // function body
+        })();
+        ```
+        Example:
+        ```javascript
+        (function(a, b) {
+            console.log(a + b);
+        })(2, 3); // Outputs: 5
+        ```
+
+        7. **Generator Functions (ES6):**
+        ```javascript
+        function* generatorFunction() {
+            yield value;
+        }
+        ```
+        Example:
+        ```javascript
+        function* count() {
+            let i = 0;
+            while (true) {
+                yield i++;
+            }
+        }
+        ```
+
+        Each type of function has its own advantages and use cases, and choosing the appropriate one depends on the specific requirements of your code. -->
+    </h5>
+
+
+
+    <script>
+    
+    // Q1 . what is Anonimus function 
+    // An anonymous function is a function that does not have a name identifier associated with it. Instead of being declared with a name, it's typically defined inline, usually as part of another expression or statement. 
+
+    // Here's an example of an anonymous function defined as a function expression:
+
+    // ```javascript
+    // const result = function(a, b) {
+    //     return a + b;
+    // };
+    // ```
+
+    // In this example, the function is defined without a name. It's assigned to the variable `result`, making it an anonymous function expression.
+
+    // Anonymous functions are used for various purposes:
+
+    // 1. **Callback Functions:** They are often used as callback functions where a function is passed as an argument to another function, such as in array methods like `forEach`, `map`, `filter`, etc.
+
+    //     ```javascript
+    //     const numbers = [1, 2, 3, 4, 5];
+    //     numbers.forEach(function(number) {
+    //         console.log(number);
+    //     });
+    //     ```
+
+    // 2. **Immediately Invoked Function Expressions (IIFE):** They can be used to create self-contained modules or to encapsulate code. 
+
+    //     ```javascript
+    //     (function() {
+    //         // code here
+    //     })();
+    //     ```
+
+    // 3. **Event Handlers:** They are often used as event handlers in web development to handle user interactions like button clicks, form submissions, etc.
+
+    //     ```javascript
+    //     document.getElementById('myButton').addEventListener('click', function() {
+    //         console.log('Button clicked!');
+    //     });
+    //     ```
+
+    // 4. **Closures:** They are commonly used to create closures, allowing functions to access variables from their containing scope even after that scope has closed.
+
+    //     ```javascript
+    //     function outerFunction() {
+    //         const outerVariable = 'I am outer!';
+    //         return function() {
+    //             console.log(outerVariable);
+    //         };
+    //     }
+    //     const innerFunction = outerFunction();
+    //     innerFunction(); // Outputs: I am outer!
+    //     ```
+
+    // 5. **As Arguments to Higher-Order Functions:** They are used when passing functions as arguments to higher-order functions.
+
+    //     ```javascript
+    //     function operateOnNumbers(a, b, operation) {
+    //         return operation(a, b);
+    //     }
+        
+    //     const result = operateOnNumbers(3, 4, function(a, b) {
+    //         return a * b;
+    //     });
+    //     ```
+
+    // In summary, anonymous functions are versatile tools in JavaScript, allowing for flexibility in coding patterns, especially when functions are used as first-class citizens. They are often used in scenarios where defining a named function isn't necessary or would clutter the code.
+
+    let item={
+        name:"anil",
+        getName:function()
+        {
+            console.warn("normal",this)
+        },
+        getNameArrow:()=>{
+            console.warn("arrow",this)
+        }
+    }
+
+
+    item.getName();
+    item.getNameArrow();
+
+        
+</script>
+</body>
+
+</html>

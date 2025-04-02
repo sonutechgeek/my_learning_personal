@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            background-color: #eee;
+            width: 80%;
+            margin: 50px 0 0 50px;
+            display: grid;
+            grid-template-columns: minmax(150px , 300px)1fr 1fr min-content;
+            grid-template-rows: repeat(2 ,minmax(150px,min-content));
+            grid-gap: 15px;
+
+        }
+        .items1{
+            background-color: orangered;
+        }
+        .items2{
+            background-color: yellowgreen;
+        }
+        .items3{
+            background-color: slateblue;
+        }
+        .items4{
+            background-color: hotpink;
+        }
+        .items5{
+            background-color: royalblue;
+        }
+        .items6{
+            background-color: palevioletred;
+        }
+        .items7{
+            background-color: goldenrod;
+        }
+        .items8{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yahoo baba : css Grid gap : min max() function  </h1>
+    <div class="container">
+        <div class="items items1">First loren4 Lorem, ipsum. </div>
+        <div class="items items2">Second</div>
+        <div class="items items3">Third</div>
+        <div class="items items4">Four Lorem ipsum dolor sit amet. thhtttttttt
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab accusantium, eius, ad odit ullam iure maiores similique optio amet quam eligendi fuga laboriosam ducimus blanditiis quasi est nisi earum expedita exercitationem dolorum reprehenderit delectus impedit voluptatibus. Alias quisquam corporis nesciunt dolores quae repudiandae iste quasi neque eos aperiam natus, modi nisi officia. Eum velit, reiciendis nobis corrupti natus ut blanditiis sunt numquam voluptates ratione. Commodi, quae autem architecto vero temporibus nam nesciunt aut harum at illum id natus repellendus inventore. Distinctio exercitationem vel quo labore recusandae itaque minima, a ullam doloribus suscipit veniam, excepturi cupiditate ducimus dolorem nemo! Illum, ea.
+        </div>
+        <div class="items items5">Five</div>
+        <div class="items items6">Six</div>
+        <div class="items items7">seven</div>
+        <div class="items items8">eight</div>
+    </div>
+</body>
+</html>

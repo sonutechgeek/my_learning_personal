@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+      
+        #box{
+            border: 2px solid red;
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            position: absolute;
+            top: 120px;
+            left: 120px;  
+            z-index: -1; 
+           
+        }
+        #box11{
+            border: 2px solid yellow;
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            z-index: -2;
+             
+           
+        }
+        #box12{
+            border: 2px solid green;
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            position: absolute;
+            top: 300px;
+            left: 300px;   
+            z-index: -3;
+        }
+    </style>
+</head>
+<body>
+    <h1>yahoo baba z-index</h1>
+   
+    <div id="box">A</div>
+    <div id="box11">B</div>
+    <div id="box12">C</div>
+</body>
+</html>

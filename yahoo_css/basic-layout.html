@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Layout</title>
+    <style>
+        
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: slategray;
+            margin: 0;
+            padding: 0;
+            
+        }
+        #wrapper{
+            border : 1px solid black;
+            width:1000px;
+            /* height: 500px; */
+            background-color: white;
+            margin: 0 auto;
+        }
+        #header{
+            background-color: crimson;
+            height: 100px;
+            margin: 0;
+            color: white;
+        }
+        #header h1{
+            margin: 0;
+            padding: 20px 0px 0px 10px;
+        }
+        #menu{
+            background-color: lightsalmon;
+        }
+        #menu ul{
+            margin: 0;
+            padding: 0;
+        }
+        #menu li{
+            display: inline-block;
+        }
+        #menu li a{
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+        }
+        #menu li a:hover{
+            background-color: crimson;
+            color: yellow;
+        }
+        #content{
+            width: 800px;
+            float: left;
+            min-height: 400px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        #sidebar{
+            background-color: lightblue;
+            width: 200px;
+            float: right;
+            min-height: 400px;
+        }
+        #sidebar a{
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: black;
+        }
+        #footer{
+            background-color: lightsalmon;
+            clear: both;
+            padding: 5px 10px;
+            text-align: right;
+        }
+        /* @media screen and (max-width:1200px) {
+            body{
+                background: pink;
+                font-size: 50px;
+            }
+        } */
+        @media  screen and (max-width:1220px) {
+            #wrapper{
+            width:800px;
+        }
+        #content{
+            width: 80%;   
+        }
+        #sidebar{
+          width: 18%;
+        }
+        }
+        @media  screen and (max-width:810px) {
+            #wrapper{
+            width:500px;
+        }
+        #content{
+            width: 70%; 
+            height: auto;  
+        }
+        #sidebar{
+          width: 29%;
+          height: auto;
+        }
+        }
+        @media  screen and (max-width:510px) {
+            #wrapper{
+            width:auto;
+        }
+        #content{
+            width: 100%;
+            float: none;   
+        }
+        #sidebar{
+          width: 100%;
+          float: none;
+        }
+        }
+    </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="header">
+        <h1>Yahoo Baba </h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <h2>basic design layout </h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At ullam consequatur similique commodi 
+            labore asperiores illum eius corrupti voluptatem dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo similique totam blanditiis distinctio asperiores. Ab rem explicabo saepe optio quos perferendis atque quaerat eaque, ad consectetur molestias, molestiae expedita? Nihil debitis excepturi ullam eligendi blanditiis sit et iste suscipit sint, iusto reiciendis veniam id, numquam voluptatem voluptates aperiam soluta recusandae.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At ullam consequatur similique commodi 
+            labore asperiores illum eius corrupti voluptatem dignissimos?  labore asperiores illum eius corrupti voluptatem dignissimos? Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo similique totam blanditiis distinctio asperiores. Ab rem explicabo saepe optio quos perferendis atque quaerat eaque, ad consectetur molestias, molestiae expedita? Nihil debitis excepturi ullam eligendi blanditiis sit et iste suscipit sint, iusto reiciendis veniam id, numquam voluptatem voluptates aperiam soluta recusandae.</p>
+    </div>
+    <div id="sidebar">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Gallery</a></li>
+            <li><a href="">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="footer">
+        yahoo baba 2018 @pvt ltd.
+    </div>
+  </div>
+</body>
+</html>

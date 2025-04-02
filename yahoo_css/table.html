@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table{
+            /* border-spacing: 20px; */
+            /* border-spacing: 20px 0px; */
+            border-collapse: collapse;
+            /* border-collapse: separate; */
+            width: 400px;
+            /* empty-cells: hide; */
+            table-layout: auto;
+            /* table-layout: fixed; */
+        }
+        table,th,td{
+            border: 1px solid black;
+        }
+        td,th{
+            vertical-align: top;
+            /* padding: 20px; */
+            padding: 10px 20px;
+        }
+        caption{
+            caption-side: bottom;
+        }
+        tr:hover{
+            background-color: aqua;
+        }
+        tr:nth-child(even){
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yahoo Baba :CSS Table Properties</h1>
+    <table>
+        <caption>Employee Record </caption>
+        <tr>
+            <th>F name </th>
+            <th>F name</th>
+            <th>Saving</th>
+        </tr>
+        <tr>
+            <td>mohanjhuhhyhgyghyghyghyghyghygyghyghyghyghyghygyghygy Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae doloribus aliquam odit consectetur ullam nam earum. Quam magni eos error.</td>
+            <td>kumar</td>
+            <td>$ 200</td>
+        </tr>
+        <tr>
+            <td>mongyfgytgygygygygygygygygygygygygygygygygyhjhuhygtygti</td>
+            <td>singh</td>
+            <td>$ 2000</td>
+        </tr>
+        <tr>
+            <td>Salim</td>
+            <td>chaudhary</td>
+            <td>$ 3000</td>
+        </tr>
+        <tr>
+            <td>Kukku</td>
+            <td>kumari</td>
+            <td>$ 400</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            background-color: #eee;
+            width: 700px;
+            height: 800px;
+            margin: 70px 0 0 50px;
+            display: grid;
+            /* grid-template-columns: 400px 200px; */
+            /* grid-template-columns: 400px 200px auto; */
+            /* grid-template-columns: 1fr 3fr 1fr; */
+            /* grid-template-columns: repeat(3,200px); */
+            grid-template-columns: repeat(2,200px) 1fr;
+            /* grid-template-rows: 150px 100px 100px; */
+            grid-template-rows: repeat(2,1fr);
+            grid-gap: 20px;
+        }
+        .items1{
+            background-color: orangered;
+        }
+        .items2{
+            background-color: yellowgreen;
+        }
+        .items3{
+            background-color: slateblue;
+        }
+        .items4{
+            background-color: hotpink;
+        }
+        .items5{
+            background-color: royalblue;
+        }
+        .items6{
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yahoo baba : css Grid </h1>
+    <div class="container">
+        <div class="items items1">First</div>
+        <div class="items items2">Second</div>
+        <div class="items items3">Third</div>
+        <div class="items items4">Four</div>
+        <div class="items items5">Five</div>
+        <div class="items items6">Six</div>
+    </div>
+</body>
+</html>

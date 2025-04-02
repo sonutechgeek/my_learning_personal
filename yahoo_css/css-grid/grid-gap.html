@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            background-color: #eee;
+            width: 700px;
+            margin: 50px 0 0 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px 100px;
+            /* grid-row-gap: 12px; */
+            /* grid-column-gap: 20px; */
+            grid-gap: 20px 50px;
+
+        }
+        .items1{
+            background-color: orangered;
+            /* grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 3;
+            grid-column-end: 4; */
+            /* grid-row: 2/3; */
+            /* grid-column: 3/4; */
+            grid-area: 2/3/3/4;
+        }
+        .items2{
+            background-color: yellowgreen;
+        }
+        .items3{
+            background-color: slateblue;
+        }
+        .items4{
+            background-color: hotpink;
+        }
+        .items5{
+            background-color: royalblue;
+        }
+        .items6{
+            background-color: goldenrod;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yahoo baba : css Grid gap : positioning </h1>
+    <div class="container">
+        <div class="items items1">First</div>
+        <div class="items items2">Second</div>
+        <div class="items items3">Third</div>
+        <div class="items items4">Four</div>
+        <div class="items items5">Five</div>
+        <div class="items items6">Six</div>
+    </div>
+</body>
+</html>

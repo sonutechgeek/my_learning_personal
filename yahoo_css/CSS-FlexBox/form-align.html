@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{padding: 0 0 0 40px;}
+        #wrapper{
+            background: #eee;
+            list-style: none;
+            margin: 50px;
+            padding: 20px;
+
+        }
+        #wrapper li{
+            display: flex;
+            padding: 5px 0;
+            justify-content: flex-end;
+        }
+        #wrapper li label{
+         flex: 1;
+        }
+        #wrapper li input{
+         flex: 3;
+        }
+        @media screen and ((min-width:300px) and (max-width:499px)) {
+            #wrapper li input{
+            flex: 2;
+        }
+            #wrapper li {
+            flex-direction: column;
+        }
+        }
+        @media screen and (min-width: 500px) {
+            #wrapper li input{
+            flex: 2;
+        }
+        }
+        @media screen and (min-width: 768px) {
+            #wrapper li input{
+            flex: 4;
+        }
+        }
+        @media screen and (min-width: 992px) {
+            #wrapper li input{
+            flex: 6;
+        }
+        }
+        @media screen and (min-width: 1200px) {
+            #wrapper li input{
+            flex: 8;
+        }
+        }
+      
+      
+      
+     
+    </style>
+</head>
+<body>
+    <h1> Yahoo Baba : Align form with flexbox</h1>
+    <form action="">
+        <ul id="wrapper">
+            <li>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="">
+            </li>
+            <li>  <label for="name">Class Name</label>
+                <input type="text" name="name" id="">
+            </li>
+            <li>
+                <label for="name">Email Address</label>
+                <input type="email" name="name" id="">
+            </li>
+            <li>
+                <button type="submit">Save</button>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>

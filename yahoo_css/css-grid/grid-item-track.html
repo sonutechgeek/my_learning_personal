@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            background-color: #eee;
+            width:700px;
+            height: 700px;
+            margin: 50px 0 0 50px;
+
+            display: grid;
+            grid-template-columns: repeat(2,150px);
+            grid-template-rows: repeat(2,100px);
+            grid-gap: 12px;
+            grid-auto-rows: 50px;
+            grid-auto-flow: row dense;
+
+            /* justify-content: center; */
+            justify-content: space-between;
+            /* align-content: center; */
+            align-content: space-around;
+
+        }
+        .items1{
+            background-color: orangered;
+        }
+        .items2{
+            background-color: yellowgreen;
+        }
+        .items3{
+            background-color: slateblue;
+            grid-row: span 3;
+        }
+        .items4{
+            background-color: hotpink;
+        }
+        .items5{
+            background-color: royalblue;
+        }
+        .items6{
+            background-color: palevioletred;
+            grid-column: span 2;
+
+        }
+        .items7{
+            background-color: goldenrod;
+            /* grid-column: span 2; */
+
+        }
+        .items8{
+            background-color: skyblue;
+        }
+        .items{
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yahoo baba : css Grid gap : align items   </h1>
+    <div class="container">
+        <div class="items items1">First. </div>
+        <div class="items items2">Second</div>
+        <div class="items items3">Third</div>
+        <div class="items items4">Four </div>
+        <div class="items items5">Five</div>
+        <div class="items items6">Six</div>
+        <div class="items items7">seven</div>
+        <div class="items items8">eight</div>
+    </div>
+</body>
+</html>

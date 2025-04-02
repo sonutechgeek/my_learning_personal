@@ -1,0 +1,152 @@
+import random
+import sys
+import pyttsx3
+import requests
+import speech_recognition as sr
+import datetime
+import os
+import wikipedia
+import pywhatkit
+from bs4 import  BeautifulSoup
+from time import sleep
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+#print(voices)
+engine.setProperty('voices', voices[0].id)
+engine.setProperty('rate', 190)
+def talk(audio):
+    engine.say(audio)
+    print(audio)
+    engine.runAndWait()
+def takecommand():
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print('listening...')
+        r.pause_threshold = 2
+        audio = r.listen(source, timeout=8, phrase_time_limit=5)
+        try:
+            print('recognizing...')
+            command = r.recognize_google(audio, language='en-in')
+            print('')
+            print(f'you say:{command}')
+        except Exception as e:
+         talk('say that again please')
+         return " "
+        command = command.lower()
+        return command
+def wishme():
+    hour = int(datetime.datetime.now().hour)
+    if hour>=0 and hour<=12:
+        talk(" 'hello !' Good morning sir!")
+    elif hour>12 and hour<15:
+        talk(" 'hello !  'Good afternoon sir!")
+    elif hour>19 and hour<=24:
+        talk("'hello !  'good night sir")
+    else:
+        talk("'hello !  'Good evening sir!")
+def temp():
+    search = "temperature in mathura"
+    url = f"https://www.google.com/search?q={search}"
+    r = requests.get(url)
+    data = BeautifulSoup(r.text, "html.parser")
+    temperature = data.find("div",class_='BNeawe').text
+    talk(f'the temperature outside is {temperature}')
+def time():
+    time = datetime.datetime.now().strftime('%I:%M %p')
+    talk(f'the current time is {time}')
+def youtube():
+     talk('sir what should i play on youtube')
+     cm = takecommand()
+     pywhatkit.playonyt(cm)
+def TaskExecution():
+    talk('hello sir! how can i help you')
+    while True:
+        command = takecommand()
+        elif 'close music' in command:
+            os.system(f"taskkill /f /im {music_dir}.exe")
+        elif 'play' in command:
+            song = command.replace('play', '')
+            talk('playing' + song)
+            pywhatkit.playonyt(song)
+            print(song)
+        elif 'time' in command:
+            time()
+        elif 'date' in command:
+            date = datetime.datetime.date().strftime('%D:%M:%Y')
+            print(date)
+            talk('date' + date)
+        elif 'who are you' in command:
+            talk('i am ronix a virtual machine developed by engineer suraj singh')
+        elif 'who is' in command:
+            p = command.replace('who is','')
+            p = wikipedia.summary(p,1)
+            talk(p)
+        elif 'are you single' in command:
+            talk("sorry i am not single i am already in a relationship with a person but i can't tell you that who is him")
+        elif 'can you walk' in command:
+            talk('sorry i cannot walk but in future if i become advance i will walk and run')
+        elif 'open youtube' in command:
+            youtube()
+            #talk('playing' + cm+ 'on youtube')
+        elif 'google' in command:
+            talk('opening google')
+            talk('sir what should i search on google')
+            gcm = takecommand()
+            talk('searching'   + gcm +   'on google')
+            pywhatkit.search(gcm)
+        elif 'stack overflow' in command:
+            talk('opening your programing solution')
+            s = f"https://stackoverflow.com/questions"
+            pywhatkit.search(s)
+        elif 'hello' in command:
+            talk('hello sir')
+        elif 'temperature' in command:
+            talk('sir may i know your your location')
+            location = takecommand()
+            pywhatkit.search("temperature  in "+ location)
+            talk('searching temperature in '+location+ 'on google')
+        elif 'who develop you' in command:
+            talk('engineer suraj singh develop me')
+        elif 'how are you' in command:
+            talk('i am performing well  and what about you')
+        elif 'i am fine' in command:
+            talk('pleasure to know about you')
+        elif 'i am not fine' in command:
+            talk(' ohh! sorry ')
+            talk('whats wrong with you')
+        elif 'is suraj singh' in command:
+            talk('''oh ! suraj singh'
+                 software engineer suraj singh developed me''')
+        elif 'what is' in command:
+            object =command.replace('what is','')
+            object = wikipedia.summary(object,5)
+            talk(object)
+        elif 'tell me' in command:
+            result = command.replace('tell me','')
+            result = pywhatkit.search(result,1)
+            talk('according to the google',result)
+        elif 'open my presentation' in command:
+            talk('ok sir opening your ppt')
+            ppt = "E:\\New folder\\presentation"
+            os.startfile(ppt)
+        elif "ok done"in command:
+            talk("i am going to sleep you can call me any time sir")
+        elif 'thank you' in command:
+            talk('its my plasure sir')
+        elif 'no'in command:
+            talk("i am going to sleep you can call me any time sir")
+            break
+        else:
+            talk('do you have any work sir')
+if __name__ == "__main__":
+    talk('system is activated')
+    wishme()
+    time()
+    temp()
+    while True:
+        permission = takecommand()
+        if "hello" in permission:
+           TaskExecution()
+        elif 'bye'in permission:
+            talk("thank's for using me  sir i am deactivating now have a very good day")
+            sys.exit()

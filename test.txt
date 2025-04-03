@@ -1,0 +1,158 @@
+// require("dotenv").config();
+const express = require("express");
+// const axios = require("axios");
+
+require("dotenv").config();
+const fs = require("fs");
+const path = require("path");
+const axios = require("axios");
+const FormData = require("form-data");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+const MTProto = require("@mtproto/core");
+
+
+// Middleware to parse JSON
+app.use(express.json());
+
+// Test route
+app.get("/", (req, res) => {
+  res.json({ message: "Server is running!" });
+});
+
+const puppeteer = require("puppeteer");
+
+// (async () => {
+//     const browser = await puppeteer.launch({ headless: false });
+//     const page = await browser.newPage();
+
+//     // Open Telegram Web
+//     await page.goto("https://web.telegram.org/");
+
+//     // Wait for user to log in manually (You need to do this once)
+//     console.log("Login to Telegram and press Enter in terminal...");
+//     await new Promise(resolve => process.stdin.once("data", resolve));
+
+//     // Navigate to your group chat (replace YOUR_GROUP_NAME with actual name)
+//     await page.waitForSelector('input[type="text"]', { timeout: 60000 });
+//     await page.type('input[type="text"]', "Testing"); // Change this to your group name
+//     await page.keyboard.press("Enter");
+
+//     // Click the attach button (📎)
+//     await page.waitForSelector('button[title="Attach"]');
+//     await page.click('button[title="Attach"]');
+
+//     // Upload image (replace with your image path)
+//     const [fileChooser] = await Promise.all([
+//         page.waitForFileChooser(),
+//         page.click('button[title="Photo or Video"]')
+//     ]);
+
+//     await fileChooser.accept(["C:/path/to/image.jpg"]); // Change this to your image path
+
+//     // Wait and click the send button (▶)
+//     await page.waitForSelector('button[title="Send"]');
+//     await page.click('button[title="Send"]');
+
+//     console.log("✅ Image sent!");
+// })();
+
+
+
+// Self-hitting API route
+// app.get("/self-hit", async (req, res) => {
+//     let uel="https://t.me/share/url?url={url}&text={text}";
+
+
+// });
+
+// app.get("/self-hit", (req, res) => {
+    // const url = encodeURIComponent("https://example.com");
+    // const text = encodeURIComponent("Check out this link!");
+    
+    // const telegramShareUrl = `https://t.me/share/url?url=${url}&text=${text}`;
+
+    // res.redirect(telegramShareUrl); // Redirects the user to Telegram
+
+
+// const api_id = 22740862;  // Replace with your API ID
+// const api_hash = "0e5a1c1fad7b5f6530d642c00437945c";  // Replace with your API Hash
+
+// const mtproto = new MTProto({
+//   api_id,
+//   api_hash,
+// });
+
+// async function sendMessage() {
+//   try {
+//     const result = await mtproto.call("messages.sendMessage", {
+//       peer: { _: "inputPeerChat", chat_id: 123456789 }, // Replace with your group ID
+//       message: "Hello from Telegram API! ",
+//       random_id: Math.floor(Math.random() * 1000000000),
+//     });
+//     console.log("Message sent:", result);
+//   } catch (error) {
+//     console.error("Error sending message:", error);
+//   }
+// }
+
+// sendMessage();
+
+// });
+
+
+
+
+
+
+
+// Load environment variables
+const BOT_TOKEN = process.env.BOT_TOKEN;
+const CHAT_ID = process.env.CHAT_ID; // Group chat ID
+const IMAGE_PATH = path.join(__dirname, "image/one.png"); // Replace with your image file path
+
+async function sendImageToTelegram() {
+  try {
+    const formData = new FormData();
+    formData.append("chat_id", CHAT_ID);
+    formData.append("photo", fs.createReadStream(IMAGE_PATH));
+
+    const response = await axios.post(
+      `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`,
+      formData,
+      { headers: formData.getHeaders() }
+    );
+
+    console.log("Image sent successfully!", response.data);
+  } catch (error) {
+    console.error("Error sending image:", error.response ? error.response.data : error.message);
+  }
+}
+
+// Call the function
+sendImageToTelegram();
+
+
+
+
+
+// Start the server
+app.listen(PORT, async () => {
+  console.log(` Server running on http://localhost:${PORT}`);
+
+  // Self-hit after the server starts
+//   try {
+//     const response = await axios.get(`http://localhost:${PORT}/self-hit`);
+//     console.log(" Self-hit response:", response.data);
+//   } catch (error) {
+//     console.error(" Error in self-hit:", error.message);
+//   }
+});
+
+
+
+
+//https://telegram.org/js/telegram-widget.js?22" data-send-message
+
+

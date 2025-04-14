@@ -3,7 +3,7 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./firebase-messaging-sw.js?' + webapp_version);
         const firebaseConfig = {
-            apiKey: "AIzaSyAVdiWL0ghg7Gwt1XYJdvONqwSchHUSRcc",
+            apiKey: "",
             authDomain: "bookmyrajshreehybrid.firebaseapp.com",
             projectId: "bookmyrajshreehybrid",
             storageBucket: "bookmyrajshreehybrid.appspot.com",

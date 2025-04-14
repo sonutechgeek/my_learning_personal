@@ -1,0 +1,141 @@
+/**********Switch button start****************/
+/* toggle in label designing */
+#toggle .toggle {
+  position: relative;
+  display: inline-block;
+  width: 140px;
+  height: 36px;
+  background-color: green;
+  border-radius: 30px;
+}
+
+/* After slide changes */
+#toggle .toggle:after {
+  content: "Switch View";
+  position: absolute;
+  width: 75px;
+  text-align: center;
+  height: 26px;
+  border-radius: 40px;
+  background-color: white;
+  top: 5px;
+  left: 5px;
+  transition: all 0.5s;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #212529;
+}
+
+/* #toggle [type="checkbox"]:not(:checked)+label:before{
+  content: "Switch View";
+  position: absolute;
+  width: 75px;
+  text-align: center;
+  height: 26px;
+  border-radius: 40px;
+  background-color: white;
+  top: 5px;
+  left: 5px;
+  transition: all 0.5s;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #212529;
+} */
+
+/* Toggle text */
+#toggle p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* Checkbox checked effect */
+#toggle .checkbox:checked + .toggle::after {
+  left: 60px;
+}
+
+/* Checkbox checked toggle label bg color */
+#toggle .checkbox:checked + .toggle {
+  background-color: #a21c1c; /*#c41616;*/
+}
+
+/* Checkbox vanished */
+#toggle .checkbox {
+  display: none;
+}
+/**********Switch button end****************/
+/*--------------------------------------------------*/
+
+/************************************/
+/* custom check box button css start*/
+.checkbox_level {
+  display: block;
+  position: relative;
+  padding-left: 0px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: 500;
+  left: -10px;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox_level input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 88px;
+  /*left: 97px;*/
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 3px solid #373f4f;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox_level:hover input ~ .checkmark {
+  background-color: #ffff;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox_level input:checked ~ .checkmark {
+  background-color: #ffff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox_level input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox_level .checkmark:after {
+  left: 3px;
+  top: -3px;
+  width: 8px;
+  height: 15px;
+  border: solid #373f4f;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*************Custom check box button end***/
+/*******************************************/

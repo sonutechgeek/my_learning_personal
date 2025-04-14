@@ -1,0 +1,504 @@
+<!-- <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head> -->
+<script src="app.static/js/jquery.date-dropdowns.min.js"></script>
+
+<!-----------------------------NEW CODE START ------------------------>
+<div class="bodydiv">
+    <div class="container" style="border:2px solid #f1f3f7;border-radius: 5px;background-color: #F1F3F7;">
+        <div class="row" style="width:100%!important;margin: 0px!important;background-color: white;">
+            <div class=" col-3 uploadimg">
+                <div class="upload-img">
+                    <img class="img-responsive rounded-circle photo"
+                        style="height: 120px; width: 120px;border:1px solid #000;" alt="Avatar">&nbsp;&nbsp;
+                    <img src="app.static/img/myprofile/add-photo.png" class="img-responsive rounded-circle"
+                        style="height: 35px; width: 35px;cursor: pointer;margin-top: 64px;" alt="ttl" id="PROFILE"
+                        onclick="return uploadProfileImg(this.id)">
+                    <!-- <div class="text-justify fname" style="white-space: nowrap;">
+                        <label class="font-weight-bold py-2 pr-5" id='profile-username'> Full Name </label>
+                        <p id="location"></p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-9 user_fullname">
+                <div class="text-justify fname" style="white-space: nowrap;">
+                    <label class="font-weight-bold py-2 pr-5" id='profile-username'> Full Name </label>
+                    <p id="location"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="width:100%!important;margin: 0px!important;">
+            <div class=" col-3 sidemenu">
+                <div class="sidebar-menu">
+
+                    <div class="pl-4 py-2" id="myprofile-icon-btn"
+                        onclick='$("#my-profile").show();$("#my-order").hide();$("#my-wallet").hide(); captureClicks("21", "", "");$("#myprofile-section").show();$("#old-my-wallet").hide();$("#desktop_help_support").hide("");$("#old-my-wallet").html("")'>
+                        <label class="lbl-icon" id="myprofile-head">Profile</label>
+                        <i class="fa fa-angle-right" id="rightarrow-myprofile"></i>
+                    </div>
+                    <div class="pl-4 py-2" id="mywallet-icon-btn"
+                        onclick='$("#my-profile").hide();$("#my-order").hide();$("#my-wallet").show(); captureClicks("22", "", "");$("#myprofile-section").hide();$("#myprofile-section").hide();$("#old-my-wallet").hide();$("#desktop_help_support").hide("");$("#old-my-wallet").html("")'>
+                        <label class="lbl-icon" id="mywallet-head">Wallet</label>
+                        <i class="fa fa-angle-right" id="rightarrow-mywallet"></i>
+                    </div>
+                    <div class="pl-4 py-2" id="old-mywallet-icon-btn">
+                    </div>
+
+                    <div class="pl-4 py-2" id="myorder-icon-btn"
+                        onclick='$("#my-profile").hide();$("#my-order").show();$("#my-wallet").hide();captureClicks("23", "", "");$("#myprofile-section").hide();$("#old-my-wallet").hide();$("#desktop_help_support").hide("");$("#old-my-wallet").html("")'>
+
+                        <label class="lbl-icon" id="myorder-head">Orders</label>
+                        <i class="fa fa-angle-right" id="rightarrow-myorder"></i>
+                    </div>
+
+                    <!-- help and support  -->
+                    <div class="pl-4 py-2" id="desktop_help_support_btn" style="position:relative;"
+                        onclick='$("#my-profile").hide();$("#my-order").hide();$("#my-wallet").hide();captureClicks("23", "", "");$("#myprofile-section").hide();$("#old-my-wallet").hide();$("#desktop_help_support").show();$("#old-my-wallet").html("")'>
+
+                        <label class="lbl-icon" id="help_n_support">Help & Support</label>
+                        <i class="fa fa-angle-right" id="rightarrow_help_n_support"></i>
+                        <label id="lable_for_badge_notification">
+                            <span class="badge" id="help_support_badge_count"></span>
+                            <!-- <i class="fa fa-angle-right" id="rightarrow_help_n_support"></i> -->
+                        </label>
+
+                    </div>
+                    <!-- help and support  -->
+
+
+
+                    <div class="pl-4 py-2" onclick='userLogout()' id="logout-icon-btn">
+                        <label class="lbl-icon" id="mylogout-head">Logout</label>
+                        <!-- <img src="app.static/img/rightarrow.png" class="img-responsive"
+                        style="height: 35px; width: 35px;float:right;cursor: pointer" alt="Avatar"> -->
+                        <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-ms-12 col-xs-12 p-5">&nbsp;</div>
+                </div>
+            </div>
+            <div class="col-9 profile" style="background:white;">
+                <div id="myprofile-section">
+                    <div id='my-profile' style="background-color: #FFFFFF;border-left: 2px solid #f1f3f7;">
+                        <div class="all_tab">
+                            <div class="row" style="width:100%;margin: 0px!important;">
+                                <div class="col-3" onclick="tabClick('personaldetail')" id="tabs">
+                                    <label class="tabs" id="personaldetail">Personal Details</label>
+                                </div>
+                                <div class="col-2" onclick="tabClick('mykyc')" id="tabs">
+                                    <label class="inactiveTab tabs" id="mykyc">KYC</label>
+                                </div>
+                                <div class="col-2" onclick="tabClick('bankdetails')" id="tabs">
+                                    <label class="inactiveTab tabs" id="bankdetails">Bank Details</label>
+                                </div>
+                                <div class="col-2" onclick="tabClick('myaddress')" id="tabs">
+                                    <label class="inactiveTab tabs" id="myaddress">Address</label>
+                                </div>
+                                <div class="col-3" onclick="tabClick('changepassword')" id="tabs">
+                                    <label class="inactiveTab tabs" id="changepassword">Change MPIN</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-bal-sec common-center" id="personalDetailCentre">
+                        <div class="personal-det-sec">
+                            <!-- <div id="img">
+                            <img class="img-responsive rounded-circle photo" id="PROFILE"
+                                onclick="return exampleModals1(this.id)"
+                                style="height: 115px; width: 115px;border:1px solid #FFFFFF;" alt="Avatar"
+                                src="app.static/img/myprofile.png">&nbsp;&nbsp;
+                        </div>--->
+                            <div class="input-field">
+                                <input type="text" id="fullname" placeholder="Full Name"
+                                    onkeypress="return KeyPressHandler('ALPHANUMCHAR', event, ' ')"
+                                    oninput="return RegularExpHandler('ALPHANUMCHAR',this.id,' ')" maxlength="100" />
+                            </div>
+                            <h4 class="DOB-heads">What is your date of birth?</h4>
+                            <input type="hidden" id="dobDropdown">
+
+                            <div class="gender">
+                                <h4 class="gender-head">Gender</h4>
+                                <input type="radio" name="gender" class="male" id="male" value="M"><span
+                                    id="male">Male</span>
+                                <input type="radio" name="gender" class="female" id="female" value="F"><span
+                                    id="female">Female</span>
+                            </div>
+                            <div class="contact-det">
+                                <h4 class="contact-det-head">Contact Details</h4>
+                                <div class="input-field">
+                                    <input type="text" id='email_address' aria-describedby="emailHelp"
+                                        placeholder="Email Address"
+                                        onkeypress="return KeyPressHandler('ALPHANUMCHAR', event, ')(-_,+ @')"
+                                        oninput="return RegularExpHandler('ALPHANUMCHAR',this.id,' _+.,()@')"
+                                        maxlength="100" />
+                                    <div class="input-group-addon pl-1">
+                                        <img src="app.static/img/image_tick.jpeg" id="e_image_show"
+                                            style='display:none;height: 20px;width: 20px;margin-top: 10px;'>
+                                        <img src="app.static/img/image_cancel.jpeg" id="e_image_hide"
+                                            style='display:none;height: 20px;width: 20px;margin-top: 10px;'>
+                                    </div>
+                                    <div class="input-group-addon" id='email_add'
+                                        style='position: relative;display:none'>
+                                        <button
+                                            class="profile-verify-email-button profile-anim-btn profile-common-button--greip profile-common-red-button profile-radius-button-25px"
+                                            id="btn_Verify" onclick="sendOTP_Email()"><span>Verify</span></button>
+                                    </div>
+                                </div>
+                                <div class="input-field" id="mobile-verify">
+                                    <input type="text" id="mno" placeholder="Mobile Number"
+                                        onkeypress="return KeyPressHandler('NUM', event, ' ')"
+                                        oninput="return RegularExpHandler('NUM',this.id,' ')" maxlength="10" />
+                                    <div class="input-group-addon" id='phone' style='position: relative;display:none;'>
+                                        <button
+                                            class="profile-verify-email-button profile-anim-btn profile-common-button--greip profile-common-red-button profile-radius-button-25px"
+                                            id="btn_send_otp" onclick="sendOTP_Mobile()"><span>Verify</span></button>
+                                    </div>
+                                    <div class="input-group-addon pl-1">
+                                        <img src="app.static/img/image_tick.jpeg" id="p_image_show"
+                                            style='display:none;height: 20px;width: 20px;margin-top: -10px;'>
+                                        <img src="app.static/img/image_cancel.jpeg" id="p_image_hide"
+                                            style='display: none;height: 20px;width: 20px;margin-top: -10px;'>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <center><button
+                                    class="btn btn-warning btn-block text-white profile-anim-btn profile-common-button--greip profile-common-red-button profile-radious-button"
+                                    id="update-profile" onclick="return updateProfile();">
+                                    <span>Update Profile</span>
+                                </button></center>
+                            <!--                        <button type="update" class="btn btn-warning btn-block text-white" id="update-profile" onclick="return updateProfile();">
+                                                <span>Update Profile</span>
+                                            </button>-->
+                        </div>
+                    </div>
+                    <div class="kyc-sec common-center" id="mykycCentre" style="display:none;">
+                        <div class="myadd-sec">
+                            <div class="mt-2 document-head-div">
+                                <!--                                <div class="col-12 ml-1" style="display: none;">
+                                                                    <strong style="line-height: 3;font-size: 18px;">
+                                                                        <nobr id="document_message"></nobr>
+                                                                    </strong>
+                                                                </div>-->
+                                <!--                                <div class="col-12" style="display: none;">
+                                                                    <select id="selecter_document" class="form-control select-documnets"
+                                                                            onchange="getDropDown()" style="height: 55px;">
+                                                                        <option value="pancard">Pan Card</option>
+                                                                        <option value="idproof">Aadhar Card</option>
+                                                                    </select>
+                                                                </div>-->
+                                <div class="row align-items-center">
+                                    <div class="col-6 text-center">
+                                        <div class='row' style="text-align:  right;">
+                                            <div class="col-12">
+                                                <label class='kycStatus-div-Class'
+                                                    style='font-size: 18px;color:black;font-weight: 500;'></label>
+                                            </div>
+                                        </div>
+                                        <!--                                        <div class='row' style="text-align:  right;">
+                                                                                    <div class="col-12">
+                                                                                        <label class='docStatus-div-Class'
+                                                                                               style='font-size: 18px;color:black;font-weight: 500;'></label>
+                                                                                    </div>
+                                                                                </div>-->
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <div class='row'>
+                                            <div class="col-12" style="text-align: left;">
+                                                <label class='kycStatus' id="kycStatus"
+                                                    style="font-weight: 600;font-size: 18px;"></label>
+                                            </div>
+                                        </div>
+                                        <!--                                        <div class='row'>
+                                                                                    <div class="col-12" style="text-align: left;">
+                                                                                        <label class='doc_kycStatus'
+                                                                                               style="font-weight: 600;font-size: 18px;"></label>
+                                                                                    </div>
+                                                                                </div>-->
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2" id="documnets_div"></div>
+                                <div class="col-12 mt-2" id="documnets_div_aadhar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo-bal-sec common-center" id="myAddressCentre" style="display:none;">
+
+                    </div>
+                    <div class="my-winning-sec common-center" id="bankDetailsCentre" style="display:none;">
+
+                    </div>
+                    <div class="bankdetail-sec common-center" id="changePasswordCentre" style="display:none;">
+
+                    </div>
+                </div>
+                <div id='my-order' class="col-xl-12 col-lg-12 col-md-12 col-ms-12 col-xs-12"
+                    style="background-color: #FFFFFF;display:none">
+                </div>
+                <div id='my-wallet' class="col-xl-12 col-lg-12 col-md-12 col-ms-12 col-xs-12"
+                    style="background-color: #FFFFFF;display:none">
+                </div>
+                <div id='old-my-wallet' class="col-xl-12 col-lg-12 col-md-12 col-ms-12 col-xs-12 col-6"
+                    style="background-color: #FFFFFF;display:none">
+                </div>
+
+                <div id='desktop_help_support' class="col-xl-12 col-lg-12 col-md-12 col-ms-12 col-xs-12 col-6"
+                    style="background-color: #FFFFFF;display:none">
+                </div>
+            </div>
+
+            <!-- <div class="card">
+                <div class="card-header" id="myorder-head"
+                     onclick="loadInnerComponents('my-orders', '#myorder', 'myorder-head')">
+                    <a id="myorder-head-link" href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                       data-target="#myorder" aria-expanded="true" aria-controls="myorder">Orders</a>
+                </div>
+            </div>
+            <div id="myorder" class="collapse" aria-labelledby="myorder-head" data-parent="#myaccount">
+                <h1>Hello</h1>
+            </div> -->
+        </div>
+    </div>
+</div>
+<!--/******************KYC Image Upload Model Start***********************/-->
+<!--<******************------Start Pan Card Image Model---------***************>-->
+<div class="container">
+    <div class="modal" tabindex="-1" id="kyc-common-modal-pan" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <div class="row" style="width: 100%;">
+                        <div class="col-12 text-center">
+                            <img src="app.static/img/logo.png" style="width:50%;">
+                        </div>
+                    </div> -->
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img src=""
+                                    style="width:200px;height:200px;border:1px solid #000;border-radius: 50%;padding: 5px;background: lightgray;"
+                                    id="kyc-uploaded-images_pan">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 py-3 text-center" id="div_image_upload_pan">
+                                <input style="width:200px;visibility:hidden;" type="file" name="image"
+                                    id="kyc-images_pan" onchange="readPanURL(this);">
+                                <center><label for="kyc-images_pan"
+                                        class="kyc-imgs profile-anim-btn profile-common-button--greip profile-common-gray-button profile-radius-button-25px"><span>Choose
+                                            File</span></label></center>
+                                <input type="hidden" id="kyc-image-type_pan">
+                                <input type="hidden" id="kyc-image-name_pan">
+                                <p id="kyc-images-name_pan">No file choosen</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 style="color: #a21c1c;border-color: #a21c1c;" id="imgAllowed_pan"><b>Only .jpg &
+                                        .png format allowed to
+                                        a
+                                        max size of 1 MB</b></h4>
+                                <h4 style="color: #a21c1c;border-color: #a21c1c;margin-top: 20px; font-weight: bold;"
+                                    id="h4_kyc_status_pan"></h4>
+                            </div>
+                            <div class="col-12 py-1 px-5 text-center">
+                                <button type="button"
+                                    class="btn btn-success font-weight-bold profile-anim-btn profile-common-button--greip profile-common-green-button text-black"
+                                    id="kyc-img-update-btn_pan"
+                                    onclick="pan_uploadImage()"><span>Update</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button"
+                                    class="btn btn-danger font-weight-bold profile-anim-btn profile-common-button--greip profile-common-red-button text-black"
+                                    id="kyc-img-pan-cancel-btn"><span>Close</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<******************------End Pan Card Image Model---------***************>-->
+<div class="container">
+    <div class="modal" tabindex="-1" id="kyc-common-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <div class="row" style="width: 100%;">
+                        <div class="col-12 text-center">
+                            <img src="app.static/img/logo.png" style="width:50%;">
+                        </div>
+                    </div> -->
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img src=""
+                                    style="width:200px;height:200px;border:1px solid #000;border-radius: 50%;padding: 5px;background: lightgray;"
+                                    id="kyc-uploaded-images">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 py-3 text-center" id="div_image_upload">
+                                <input style="width:200px;visibility:hidden;" type="file" name="image" id="kyc-images"
+                                    onchange="readURL(this);">
+                                <center><label for="kyc-images"
+                                        class="kyc-imgs profile-anim-btn profile-common-button--greip profile-common-gray-button profile-radius-button-25px"><span>Choose
+                                            File</span></label></center>
+                                <input type="hidden" id="kyc-image-type">
+                                <input type="hidden" id="kyc-image-name">
+                                <p id="kyc-images-name">No file choosen</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h4 style="color: #a21c1c;border-color: #a21c1c;" id="imgAllowed"><b>Only .jpg & .png
+                                        format allowed to
+                                        a
+                                        max size of 1 MB</b></h4>
+                                <h4 style="color: #a21c1c;border-color: #a21c1c;margin-top: 20px; font-weight: bold;"
+                                    id="h4_kyc_status"></h4>
+                            </div>
+                            <div class="col-12 py-1 px-5 text-center">
+                                <button type="button"
+                                    class="btn btn-success font-weight-bold profile-anim-btn profile-common-button--greip profile-common-green-button text-black"
+                                    id="kyc-img-update-btn"
+                                    onclick="uploadImage()"><span>Update</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button"
+                                    class="btn btn-danger font-weight-bold profile-anim-btn profile-common-button--greip profile-common-red-button text-black"
+                                    id="kyc-img-cancel-btn"><span>Close</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/******************KYC Image Upload Model End***********************/-->
+
+<!--/******************Profile Image Upload Model Start***********************/-->
+<!-- Modal -->
+<div class="modal fade" id="profileImageModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <div class="row" style="width: 100%;">
+                    <div class="col-12 text-center">
+                        <img src="app.static/img/logo.png" style="width:50%;">
+                    </div>
+                </div>
+            </div> -->
+            <div class="modal-body">
+                <div class="container">
+                    <div class="upload-profile-img-modals">
+                        <div class="col-12 text-center">
+                            <img src=""
+                                style="width:200px;height:200px;border:1px solid #000;border-radius: 50%;padding: 5px;"
+                                id="uploaded-images">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 py-3 text-center">
+                                <input style="width:200px;visibility:hidden;" type="file" name="image" id="image"
+                                    onchange="readProfileURL(this);">
+                                <center><label for="image" class="profile-imgs">Choose
+                                        File</label></center>
+                                <input type="hidden" id="image-type">
+                                <input type="hidden" id="image-name">
+                                <p id="profile-img-name">No file choosen</p>
+                                <p id="profile-img-size">Upload size maximum 2 MB</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 py-3 px-5 text-center">
+                                <button type="button"
+                                    class="btn btn-warning text-black font-weight-bold profile-anim-btn profile-common-button--greip profile-common-red-button profile-radious-button"
+                                    id="img-update-btns"><span>Update</span></button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button"
+                                    class="btn btn-warning text-black font-weight-bold profile-anim-btn profile-common-button--greip profile-common-gray-button profile-radious-button"
+                                    id="img-cancel-btns"><span>Cancel</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--/******************Profile Image Upload Model End***********************/-->
+
+
+<!-----------------------------NEW  CODE END ------------------------->
+
+<link rel="stylesheet" href="app.account/account.css">
+
+<script>$.getScript("app.account/account.js?" + webapp_version)</script>
+<script>$.getScript("app.account/kyc_doc.js?" + webapp_version)</script>
+
+<script>
+    tabClick('personaldetail');
+
+    function tabClick(tabName) {
+        var tabname = tabName.toLowerCase();
+        $('.common-center').hide();
+        $('.tabs').addClass('inactiveTab');
+        $('#' + tabname).removeClass('inactiveTab');
+        if (tabname == 'personaldetail') {
+            $('#personalDetailCentre').show();
+            $('#myAddressCentre').hide();
+            $('#bankDetailsCentre').hide();
+            $('#changePasswordCentre').hide();
+            $('#mykycCentre').hide();
+        } else if (tabname == 'mykyc') {
+            if (user.hasOwnProperty("username") && user.hasOwnProperty("mobileno") &&
+                user.hasOwnProperty("mobile_verification") && user["username"].trim() != "" &&
+                user["username"].trim().length > 0 && user["mobileno"] != "" && user["mobile_verification"] == "1") {
+                $('#mykycCentre').show();
+                $('#myAddressCentre').hide();
+                $('#personalDetailCentre').hide();
+                $('#bankDetailsCentre').hide();
+                $('#changePasswordCentre').hide();
+                kycTabButton();
+            } else {
+                successErrorAlert("error", "", "Please update personal details.");
+                tabClick('personaldetail');
+            }
+        } else if (tabname == 'myaddress') {
+            $('#myAddressCentre').show();
+            $('#personalDetailCentre').hide();
+            $('#bankDetailsCentre').hide();
+            $('#changePasswordCentre').hide();
+            $('#mykycCentre').hide();
+            loadComponent("address", "REQ002", "", "", "", "#myAddressCentre");
+        } else if (tabname == 'bankdetails') {
+            $('#myAddressCentre').hide();
+            $('#personalDetailCentre').hide();
+            $('#bankDetailsCentre').show();
+            $('#changePasswordCentre').hide();
+            $('#mykycCentre').hide();
+            loadComponent("bankdetails", "REQ002", "", "", "", "#bankDetailsCentre");
+        } else {
+            $('#myAddressCentre').hide();
+            $('#personalDetailCentre').hide();
+            $('#bankDetailsCentre').hide();
+            $('#changePasswordCentre').show();
+            $('#mykycCentre').hide();
+            loadComponent("changempin", "REQ002", "", "", "", "#changePasswordCentre");
+        }
+    }
+</script>

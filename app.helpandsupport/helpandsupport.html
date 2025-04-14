@@ -1,0 +1,31 @@
+<div class="helpnavtab text-center" style="border-top: 2px solid black;">
+    <div class="row">
+        <div class="col-6" onclick="requestTabClick('raiserequest')" id="help_tabs"
+            style="border-right: 1px solid black;">
+            <label class="help_tabs" id="raiserequest">Raise a Request</label>
+        </div>
+        <div class="col-6" onclick="requestTabClick('requeststatus')" id="help_tabs1"
+            style="border-left: 1px solid black;">
+            <label class="help_inactiveTab help_tabs" id="requeststatus">Request Status</label>
+        </div>
+    </div>
+</div>
+<div class="raise-sec help_common_center" id="raiseRequestCentre">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="col-12 bg-white rounded shadow p-4">
+            <h3 class="text-left mb-4 font-weight-bold" style="font-size:20px;">Type of Problem:</h3>
+            <div class="list-group" id="show_problem_details"></div>
+            <div class="justify-content-between align-items-center mt-3" id="issueDescriptionDiv" style="display:none;">
+                <div style="width:90%;">
+                    <input class="form-control" id="issueDescription"
+                        placeholder="Tell us a little more about your issue." style="height: 37px;" />
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="submitProblem()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="request-sec help_common_center" id="requestStatusCentre"></div>
+<link rel="stylesheet" href="app.helpandsupport/helpandsupport.css?" + webapp_version>
+<script>$.getScript("app.helpandsupport/helpandsupport.js?" + webapp_version)</script>

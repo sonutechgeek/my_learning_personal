@@ -1,0 +1,95 @@
+#congrax-congratulation {
+    font-size: 35px;
+    font-family: system-ui;
+    color: #495061;
+    font-weight: 600;
+    margin: 8px 19px;
+    padding: 16px 0px 11px 0px;
+}
+
+#cust-name-congratulation {
+    font-family: system-ui;
+    font-weight: 550;
+    color: #373f4f;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+#order-status-congratulation {
+    font-weight: 550;
+    color: #373f4f;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.main_wrap_cart_congratulation p {
+    line-height: 11px;
+}
+
+#check-status-congratulation {
+    background-color: #c22222;
+    border: 0px;
+    color: white;
+    padding: 5px 0px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    width: 25%;
+}
+
+#congrax-img-icon-congratulation {
+    width: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#congrax-img-icon-congratulation {
+    text-align: center;
+}
+/**************Second View CSS****************************/
+.subtotal_class_div_1_cart {
+    background-color: white;
+    border: 2px solid #212529;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* height: 20vh; */
+    /* overflow-y: auto; */
+}
+.h5_text {
+    font-weight: 600;
+}
+.h5_v2_ {
+    background: white;
+    color: #212529;
+    padding: 4px;
+    border-radius: 15px;
+    font-weight: 600;
+    width: 80%;
+    border: 2px solid #212529;
+}
+.ticket_no_cart_v2 {
+    background: white;
+    border-radius: 15px;
+    padding-top: 3px;
+    height: 29px;
+    color: #212529;
+    padding-left: 10px;
+    border: 2px solid #212529;
+}
+.cart-top-border {
+    border-top: 1px solid #a21c1c;
+    padding-top: 5px;
+}
+
+.h5_text {
+    font-weight: 600;
+}
+
+.add-name-addresh-p{
+    font-size: 1.1rem;
+    font-weight: 600;
+}

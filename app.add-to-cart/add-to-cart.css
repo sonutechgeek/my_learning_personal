@@ -1,0 +1,696 @@
+#tooltip {
+  text-align: left;
+  color: black;
+  background: #aadbf9;
+  position: absolute;
+  z-index: 100;
+  padding: 15px;
+  min-width: max-content;
+  font-size: x-small;
+}
+
+#tooltip:after {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #111;
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  margin-left: -10px;
+}
+
+#tooltip.top:after {
+  border-top-color: transparent;
+  border-bottom: 10px solid #111;
+  top: -20px;
+  bottom: auto;
+}
+
+#tooltip.left:after {
+  left: 10px;
+  margin: 0;
+}
+
+#tooltip.right:after {
+  right: 10px;
+  left: auto;
+  margin: 0;
+}
+
+.main-div_lottery .feature_p_slider .owl-dots {
+  margin-top: -50px !important;
+}
+
+/*.main-div_lottery .owl-dots {
+    margin-top: -50px !important;
+    margin-bottom: 11px !important;
+}*/
+
+.feature_p_slider .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c0d5da;
+}
+
+.feature_p_slider .owl-dots .owl-dot.active {
+  width: 12px;
+  height: 12px;
+  outline: none;
+  background-color: #212529;
+  outline-width: thick;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.owl-controls {
+  position: relative !important;
+  bottom: 50px !important;
+}
+
+.text_color {
+  color: #212529;
+  font-weight: 600;
+  /*font-weight: 500;*/
+}
+
+.text_size {
+  font-size: 15px;
+}
+
+.text-align-ment {
+  text-align: left;
+}
+
+.text-align-ment-1 {
+  text-align: right;
+}
+
+.lontname2 {
+  position: relative;
+  bottom: 5px;
+}
+
+.how-to-play-div {
+  /* border: 3px solid #373f4f; */
+  border-radius: 20px;
+  padding: 0px;
+  text-align: center;
+  background: #a21c1c;
+  color: white;
+  font-weight: 700;
+}
+
+/*************Display CARD CSS ************/
+.cart-bottom-border {
+  border-bottom: 1px solid #a21c1c;
+}
+
+.cart-top-border {
+  border-top: 1px solid #a21c1c;
+  padding-top: 5px;
+}
+
+/*.cart-add-button-div {
+    background-color: #a21c1c;
+    height: 30px;
+    color: white;
+    position: relative;
+    bottom: 5px;
+    box-shadow: 3px 3px lightgray;
+    border-radius: 12px;
+    cursor: pointer;
+}*/
+
+.incremenet_decremenet_div {
+  background-color: lightgray;
+  height: 30px;
+  color: #a21c1c;
+  position: relative;
+  bottom: 4px;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid #212529;
+  border-radius: 12px;
+}
+
+.h5-add-text {
+  /* font-family: sans-serif; */
+  position: relative;
+  bottom: 2px;
+}
+
+.h4_text {
+  color: #212529;
+}
+
+.customer-cart-remark {
+  height: 50px;
+  background-color: #f5f6f7;
+  width: 95%;
+  border-radius: 5px;
+}
+
+/**********Buy Button*******/
+.add-to-cart-button {
+  margin-top: 1vh;
+  width: 100%;
+  /*height: 6vh;*/
+  border-radius: 3vh;
+  background-color: #f4f5f8;
+  border: 2px solid #373f4f;
+  font-size: 1.2rem;
+  color: #373f4f;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/*----------------- Animation code start ---------------------*/
+/*.add-to-buy-button:hover {
+    transition-duration: 0.1s;
+    background-color: #c22222;
+}
+
+.add-to-buy-button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px rgb(7, 164, 175);
+    border: 0px;
+}
+
+.add-to-buy-button:active:after {
+    box-shadow: 0 0 0 0 rgb(7, 164, 175);
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 0s;
+    border: 0px;
+}
+
+.add-to-buy-button:active {
+    top: 1px;
+}*/
+
+/*-------------------Animation code End -------------------------*/
+
+.note_message {
+  color: #373f4f;
+  font-size: 1rem;
+}
+
+/************Second view css***************/
+.secondview_ticket-select-process {
+  width: 100%;
+}
+
+.secondview_div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 0.1vh;
+  padding-bottom: 1vh;
+}
+
+.secondview-heading {
+  font-size: 3vh;
+  color: #212529;
+  font-weight: 600;
+}
+
+.secondview_select-pin-no {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+  /* margin-top: 1vh; */
+}
+
+.secondview_select-pin-no input[type="checkbox"] {
+  display: none !important;
+}
+
+.secondview_select-pin-no input[type="checkbox"]:checked + label {
+  background-color: #212529 !important;
+  color: #fff !important;
+}
+
+.secondview_select-pin-no label {
+  display: flex;
+  /*width: 30%;*/
+  width: 14%;
+  height: 25px;
+  border: 2px solid #212529;
+  cursor: pointer;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f5f8;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+/**********Ticket No************/
+
+.secondview_ticket_no {
+  /* height: 15vh; *
+    overflow-y: auto;
+    /* width: 100%;
+    display: flex;
+    gap: 10px; */
+  overflow-x: hidden;
+}
+
+.secondview_ticket_no .ticket_no_div {
+  display: flex;
+  width: 110%;
+  /*width: 110px;*/
+  height: 30px;
+  /*6vh*/
+  border: 2px solid #212529;
+  border-radius: 15px;
+  /*3vh*/
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f5f8;
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.h5_text {
+  font-weight: 600;
+}
+
+.h5_text_color {
+  color: #212529;
+}
+
+.more_fa_icon {
+  font-size: 35px;
+  color: #a21c1c;
+  font-weight: bold;
+  position: relative;
+  top: 6px;
+  cursor: pointer;
+}
+
+.more_span {
+  color: #212529;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.selected_drawdate {
+  border: 2px solid #212529 !important;
+  background-color: #212529 !important;
+  color: #f4f5f8 !important;
+}
+
+.selected_ticket_no {
+  border: 2px solid #212529 !important;
+  background-color: #212529 !important;
+  color: #f4f5f8 !important;
+}
+
+/***********Common CSS CHECK BOX****************/
+
+.secondview_select-pin-no [type="checkbox"]:not(:checked) + label:before,
+.secondview_select-pin-no [type="checkbox"]:checked + label:before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  visibility: hidden;
+}
+
+/***********Sub Total**************/
+.subtotal_class_div {
+  background-color: #f5f6f7;
+  border: 2px solid #212529;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* height:20vh; */
+  /* overflow-y:auto; */
+}
+
+.subtotal_class_div_1 {
+  background-color: white;
+  border: 2px solid #212529;
+  border-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* height:20vh; */
+  /* overflow-y:auto; */
+}
+
+.h5_v2_ {
+  background: #212529;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.h5_v2_number {
+  font-size: 13px;
+}
+
+.check_box_div {
+  background-color: #a21c1c;
+  color: white;
+  width: 50%;
+  border-radius: 1px;
+  padding-top: 3px;
+  cursor: pointer;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.uncheck_box_div {
+  background-color: #f4f5f8;
+  color: #212529;
+  width: 50%;
+  border-radius: 3px;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+/***********New button*************/
+
+.button--mimas {
+  margin-top: 1vh;
+  width: 100%;
+  border-radius: 3vh;
+  font-weight: 600;
+  font-size: 1.2rem;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.add-to-cart-color {
+  color: #373f4f;
+  background-color: #f4f5f8;
+  border: 2px solid #373f4f;
+}
+
+.button-mim {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #f4f5f8;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+}
+
+.button--mimas label {
+  position: relative;
+  color: white;
+}
+
+.button--mimas:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.button-mim::before,
+.button-mim::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button--mimas :hover {
+  color: #373f4f !important;
+}
+
+.button--mimas::before {
+  content: "";
+  background: #373f4f;
+  width: 120%;
+  left: -10%;
+  /*transform: skew(30deg);*/
+  transition: transform 0.5s cubic-bezier(0.5, 1, 0.8, 1);
+  color: white;
+  border-radius: 3vh;
+  border: 2px solid #373f4f !important;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-top: 2px;
+}
+
+/****Next Grip Animation***************************/
+/*.add-to-buy-button {
+    margin-top: 1vh;
+    width: 90%;
+    height: 6vh;
+    border-radius: 3vh;
+    background-color: #a21c1c;
+    border: 2px solid #a21c1c;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 5px;
+}*/
+
+.button--greip {
+  overflow: hidden;
+  margin-top: 1vh;
+  width: 90%;
+  border-radius: 3vh;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.buy-cart-color {
+  background-color: #c22222;
+  border: 2px solid #c22222;
+  color: white;
+}
+
+.button-buy {
+  pointer-events: auto;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+}
+
+.button--greip lavel {
+  position: relative;
+  overflow: hidden;
+}
+
+.button--greip:hover {
+  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+
+.common-button--greip::before {
+  content: "";
+  background: #a21c1c;
+  /*    width: 100%;
+        height: 100%;*/
+  transform-origin: 50% 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transition: clip-path 0.2s, -webkit-clip-path 0.2s;
+  transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+  color: white;
+}
+
+.button--greip:hover::before {
+  transition-duration: 0.3s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+}
+
+.button-buy::before,
+.button-buy::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/************Add Cart Button CSSS**********************/
+
+/*.cart-add-button-div {
+    background-color: #a21c1c;
+    height: 30px;
+    color: white;
+    position: relative;
+    bottom: 5px;
+    box-shadow: 3px 3px lightgray;
+    border-radius: 12px;
+    cursor: pointer;
+}*/
+
+.add-button--greip {
+  background-color: #c22222;
+  height: 30px;
+  color: white;
+  bottom: 5px;
+  box-shadow: 3px 3px lightgray;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.add-button--greip h4 {
+  position: relative;
+}
+
+.add-button--greip:hover {
+  animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+}
+
+.add-button--greip:hover::before {
+  transition-duration: 0.3s;
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+}
+
+.add-button-buy::before,
+.button-buy::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/************Increment Decrement CSS Animation***************/
+/*.inc_dec_button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.inc_dec_button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}*/
+.pressed {
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  background: #c22222;
+  color: #fff;
+  bottom: 4px;
+  border-radius: 30%;
+  padding: 2px;
+  position: relative;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1030px) {
+  h5.h5_text {
+    font-size: 12px !important;
+  }
+
+  h6 {
+    font-size: 12px !important;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 770px) {
+  h6.h5_text {
+    font-size: 21px !important;
+  }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 650px) {
+  h6.h5_text {
+    font-size: 16px !important;
+  }
+
+  h6 {
+    font-size: 17px !important;
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 365px) {
+  h6.h5_text {
+    font-size: 11px !important;
+  }
+
+  h5.h5_text {
+    font-size: 13px !important;
+  }
+
+  .add-to-cart-button {
+    width: 100px !important;
+  }
+
+  #toggle .checkbox:checked + .toggle::after {
+    left: 41px !important;
+  }
+
+  #toggle .toggle {
+    width: 117px !important;
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 400px) {
+  h6.h5_text {
+    font-size: 14px !important;
+  }
+}
+
+.label-with-cross {
+  position: relative;
+  display: inline-block;
+}
+.label-with-cross .cross-line {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 45%;
+  border-top: 2px dotted gray;
+  transform-origin: center;
+}
+.label-with-cross .cross-line:first-child {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.label-with-cross .cross-line:last-child {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}

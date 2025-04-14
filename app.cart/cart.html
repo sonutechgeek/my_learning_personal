@@ -1,0 +1,142 @@
+<div id="main-div" style="background-color: #f4f5f8;">
+    <div id="cart_details_div">
+        <div class='row'>
+            <div class='col-1'></div>
+            <div class='col-10' style="background-color: #ffff;">
+                <div class='row'>
+                    <div class='col-6'>
+                        <div class="row mt-3">
+                            <div class="col-12 text-center" id="textMyCart">
+                                <h3 class="common_font_color" id="empty_css"><b>My Cart (<span
+                                            id="heading_cart_total"></span>)</b></h3>
+                            </div>
+                        </div>
+                        <div class="empty_cart_row"></div>
+                        <div id="show_Cart_Lottery_Data_div"></div>
+                        <div id="show_Cart_wallet_div"></div>
+                        <div id="show_play_option"></div>
+                    </div>
+                    <div class='col-6'>
+                        <div class="row mt-3">
+                            <div class="col-12 text-center">
+                                <h3 class="common_font_color"><b>&nbsp;</b></h3>
+                            </div>
+                        </div>
+                        <div id="show_play_option_new"></div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-1'></div>
+        </div>
+    </div>
+    <div class="mt-2 pt-5" id="cogratulation_div" style="margin-bottom: 10%;"></div>
+</div>
+
+
+<!-- The Modal -->
+<div id="modifyAddModal" class="modify_add_modal">
+    <!-- Modal content -->
+    <div class="modify_add_modal-content">
+        <div class="modify_add_modal-body">
+            <div id="top-content">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        <span class="modify-add-closes">&times;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <div id="modify_add_container">
+
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ticketsafe" tabindex="-1" role="dialog" aria-labelledby="paymentModeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background-color: #f4f5f8;line-height: 18px;font-size: 13px;">
+            <div class="modal-header" style="padding: 9px 13px 0px 0px;">
+                <h5 class="modal-title" id="paymentModeModalLabel"
+                    style="color: rgb(0, 0, 0); font-weight: bold; padding-left: 153px; font-size: 20px;"><u>Keep Ticket
+                        Safe</u></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="ticket-safe-question">
+                    <ol>
+                        <li>What is keep ticket safe?</li>
+                        <p style="margin-left: -15px;margin-top: 3px;margin-bottom: 10px;">a.) Keep ticket safe is a
+                            service which we are providing to our customer in which all the purchased ticket are kept
+                            safe to our office. However, we scan all the ticket which you have bought and display the
+                            same to you on website at transaction -&gt; scan ticket page. This scanned copy
+                            guarantees your ownership of ticket and only you will be entitled to benefit of prize money.
+                        </p>
+                        <li>Am I able to see my purchased ticket before draw?</li>
+                        <p style="margin-left: -15px;margin-top: 3px;margin-bottom: 10px;">a.) Yes, we will take maximum
+                            care to upload your purchased tickets on website so that you can view it before the draw
+                            starts. In an unfortunate situation if we are unable to upload the tickets then we will
+                            cancel your transaction &amp; we will keep you update on situation at earliest.</p>
+                        <li>Where is my original ticket?</li>
+                        <p style="margin-left: -15px;margin-top: 3px;margin-bottom: 10px;">a.) Original tickets are
+                            stored at our operational office. Where dispatch &amp; handling takes place.These tickets
+                            are stored safely with your name on the back of ticket.</p>
+                        <li>How do I know that displayed ticket belongs to me?</li>
+                        <p style="margin-left: -15px;margin-top: 3px;margin-bottom: 10px;">a.) This has 2-layer system
+                            firstly you can view the invoice/delivery challan copy in your order section and secondly
+                            when we are scanning the tickets, we will also scan the backside of the one of the tickets
+                            where you can see your name mentioned on it.</p>
+                        <li>Why I opt this service?</li>
+                        <p style="margin-left: -15px;margin-top: 3px;margin-bottom: 5px;">a.) With opting this service
+                            firstly, it is totally free of cost.</p>
+                        <p style="margin-left: -15px;margin-top: 0px;margin-bottom: 5px;">b.) Zero your courier charges,
+                            as these tickets are not couriered.</p>
+                        <p style="margin-left: -15px;margin-top: 0px;margin-bottom: 5px;">c.) Time taken to view this
+                            ticket by you reduced as it is uploaded on portal, without waiting for courier to reach to
+                            you which normally takes 1 or 2 days.</p>
+                        <p style="margin-left: -15px;margin-top: 0px;margin-bottom: 10px;">d.) Any winning which is
+                            below 10 thousand arising from your bought ticket will be credited immediately to your
+                            account this will facilitate you on buying your next lucky ticket earliest.</p>
+                        <li>How do I know when my tickets are uploaded?</li>
+                        <p style="margin-left: -15px;margin-top: 3px;margin-bottom: 10px;">a.) We will send an email to
+                            you confirming that your tickets are scanned, after which you can login to
+                            bookmyrajshree.com and check in my orders section.</p>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal end-->
+
+
+<link rel="stylesheet" href="app.cart/cart.css">
+<link rel="stylesheet" href="app.cart/cart_2.css">
+<script>$.getScript("app.cart/addMoney.js?" + webapp_version)</script>
+<script>$.getScript("app.cart/cart.js?" + webapp_version)</script>
+<script>$.getScript("app.cart/getAddresh.js?" + webapp_version)</script>
+<script>$.getScript("app.cart/sale.js?" + webapp_version)</script>
+<script>
+    if (user != null) {
+        setTimeout(() => {
+            if (user.hasOwnProperty("custcode") && user.custcode) {
+                var value = $(".cart-sub-total").text();
+                if ($(".cart-sub-total").text() != 0) {
+                    fbq('track', 'AddToCart', { Content_type: "Product", currency: "INR", value: value });
+                }
+            }
+        }, 1000);
+    }
+</script>

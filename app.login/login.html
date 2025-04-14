@@ -1,0 +1,32 @@
+<div class="container-fluid Login_login_container">
+    <div id="loginDataDiv"></div>
+</div>
+<script src="https://accounts.google.com/gsi/client" async></script>
+<script>$.getScript('app.login/login.js?' + webapp_version)</script>
+<script>$.getScript('app.login/loginOtp.js?' + webapp_version)</script>
+<script>$.getScript('app.login/mpin.js?' + webapp_version)</script>
+<link rel="stylesheet" href="app.login/login.css">
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1054955281532685',
+            cookie: true,
+            xfbml: true,
+            version: 'v6.0'
+        });
+
+        FB.AppEvents.logPageView();
+
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
